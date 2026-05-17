@@ -1,86 +1,121 @@
 import { useState } from "react";
 
-function Employee() {
-  const [title, setTitle] = useState("");
-  const [target, setTarget] = useState("");
-  const [weight, setWeight] = useState("");
-  const [goals, setGoals] = useState([]);
+function Employee(){
 
-  const addGoal = () => {
-    if (goals.length >= 8) {
-      alert("Maximum 8 goals allowed");
-      return;
-    }
+const [search,setSearch]=useState("");
 
-    if (Number(weight) < 10) {
-      alert("Minimum weight is 10%");
-      return;
-    }
+const goals=[
+{
+title:"Increase Sales",
+status:"Approved"
+},
+{
+title:"Customer Satisfaction",
+status:"Pending"
+},
+{
+title:"Employee Training",
+status:"Approved"
+},
+{
+title:"Reduce Complaints",
+status:"Rejected"
+}
+];
 
-    const total =
-      goals.reduce((sum, g) => sum + Number(g.weight), 0) +
-      Number(weight);
+const filteredGoals=goals.filter(goal =>
+goal.title.toLowerCase().includes(
+search.toLowerCase()
+)
+);
 
-    if (total > 100) {
-      alert("Total weight cannot exceed 100%");
-      return;
-    }
+return(
 
-    setGoals([
-      ...goals,
-      {
-        title,
-        target,
-        weight,
-      },
-    ]);
+<div className="page">
 
-    setTitle("");
-    setTarget("");
-    setWeight("");
-  };
+<div className="card">
 
-  return (
-    <div>
-      <h1>Employee Dashboard</h1>
+<h1>Employee Dashboard</h1>
 
-      <input
-        placeholder="Goal Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+<h2>🏆 Achievements</h2>
 
-      <br /><br />
+<div className="stats">
 
-      <input
-        placeholder="Target"
-        value={target}
-        onChange={(e) => setTarget(e.target.value)}
-      />
+<div className="statBox">
+🏆 Goal Master
+</div>
 
-      <br /><br />
+<div className="statBox">
+⭐ Top Performer
+</div>
 
-      <input
-        placeholder="Weight %"
-        value={weight}
-        onChange={(e) => setWeight(e.target.value)}
-      />
+<div className="statBox">
+🚀 Fast Completion
+</div>
 
-      <br /><br />
+</div>
 
-      <button onClick={addGoal}>
-        Add Goal
-      </button>
+<br/>
 
-      <h3>Goals</h3>
+<h2>🔍 Search Goals</h2>
 
-      {goals.map((g, i) => (
-        <div key={i}>
-          {g.title} | {g.target} | {g.weight}%
-        </div>
-      ))}
-    </div>
-  );
+<input
+placeholder="Search goal..."
+value={search}
+onChange={(e)=>
+setSearch(e.target.value)
+}
+/>
+
+<div className="goalGrid">
+
+{filteredGoals.map((goal,index)=>(
+
+<div
+className="goalCard"
+key={index}
+>
+
+<h3>{goal.title}</h3>
+
+<p>
+Status:
+{" "}
+{goal.status}
+</p>
+
+</div>
+
+))}
+
+</div>
+
+<br/>
+
+<h2>🤖 AI Recommendation</h2>
+
+<div className="goalCard">
+
+<p>
+Increase customer satisfaction target by 5%
+</p>
+
+<p>
+Reduce complaint threshold
+</p>
+
+<p>
+Improve delivery speed KPI
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Employee;

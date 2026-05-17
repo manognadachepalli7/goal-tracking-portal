@@ -1,37 +1,74 @@
-function Admin() {
-  return (
-    <div>
-      <h1>Admin Dashboard</h1>
+function Admin(){
 
-      <h3>Goal Control</h3>
+return(
 
-      <button>
-        Unlock Goals
-      </button>
+<div className="page">
 
-      <button>
-        Push Shared KPI
-      </button>
+<div className="card">
 
-      <h3>Reports</h3>
+<h1>Admin Dashboard</h1>
 
-      <p>Total Employees : 10</p>
+<div className="stats">
 
-      <p>Approved Goals : 8</p>
+<div className="statBox">
+<h3>Total Employees</h3>
+<p>10</p>
+</div>
 
-      <p>Pending Goals : 2</p>
+<div className="statBox">
+<h3>Approved Goals</h3>
+<p>8</p>
+</div>
 
-      <h3>Audit Log</h3>
+<div className="statBox">
+<h3>Pending Goals</h3>
+<p>2</p>
+</div>
 
-      <p>
-        Manager approved Sales Goal
-      </p>
+</div>
 
-      <p>
-        Admin unlocked Goal Sheet
-      </p>
-    </div>
-  );
+<h2>Goal Control</h2>
+
+<div className="roleButtons">
+
+<button className="blue">
+Unlock Goals
+</button>
+
+<button className="green">
+Push Shared KPI
+</button>
+
+</div>
+
+<h2>Audit Log</h2>
+
+<div className="goalGrid">
+
+<div className="goalCard">
+Manager approved Sales Goal
+</div>
+
+<div className="goalCard">
+Admin unlocked Goal Sheet
+</div>
+
+<div className="goalCard">
+New KPI released
+</div>
+
+<div className="goalCard">
+Quarter report generated
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Admin;

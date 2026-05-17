@@ -1,31 +1,114 @@
 import { useNavigate } from "react-router-dom";
 
-function Login() {
-  const navigate = useNavigate();
+function Login(){
 
-  return (
-    <div>
-      <h1>Goal Tracking Portal</h1>
+const navigate=useNavigate();
 
-      <h3>Select Role</h3>
+return(
 
-      <button onClick={() => navigate("/employee")}>
-        Employee Login
-      </button>
+<div className="page">
 
-      <br /><br />
+<div className="card">
 
-      <button onClick={() => navigate("/manager")}>
-        Manager Login
-      </button>
+<h1>🚀 Goal Tracking Portal</h1>
 
-      <br /><br />
+<p>
+Smart KPI & Performance Management System
+</p>
 
-      <button onClick={() => navigate("/admin")}>
-        Admin Login
-      </button>
-    </div>
-  );
+<div className="stats">
+
+<div className="statBox">
+📈 Track Goals
+</div>
+
+<div className="statBox">
+🤝 Approve Faster
+</div>
+
+<div className="statBox">
+🏆 Improve Performance
+</div>
+
+</div>
+
+<br/>
+
+<h2>Features</h2>
+
+<div className="goalGrid">
+
+<div className="goalCard">
+🏆 Achievement System
+</div>
+
+<div className="goalCard">
+🔍 Search & Filter
+</div>
+
+<div className="goalCard">
+🤖 AI Recommendation
+</div>
+
+<div className="goalCard">
+📊 KPI Dashboard
+</div>
+
+</div>
+
+<br/>
+
+<h2>Select Role</h2>
+
+<div className="roleButtons">
+
+<button
+className="blue"
+onClick={()=>
+navigate("/employee")
+}
+>
+👨 Employee
+</button>
+
+<button
+className="green"
+onClick={()=>
+navigate("/manager")
+}
+>
+👩‍💼 Manager
+</button>
+
+<button
+className="red"
+onClick={()=>
+navigate("/admin")
+}
+>
+🛡 Admin
+</button>
+
+</div>
+
+<br/>
+
+<div className="goalCard">
+
+<h3>AI Insight</h3>
+
+<p>
+"Customer satisfaction can be improved by increasing KPI target by 5%"
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Login;
