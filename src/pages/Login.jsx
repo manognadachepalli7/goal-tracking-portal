@@ -10,96 +10,92 @@ return(
 
 <div className="card">
 
-<h1>🚀 Goal Tracking Portal</h1>
+<h1>🚀 GoalSync</h1>
 
 <p>
-Smart KPI & Performance Management System
+Smart KPI & Performance Management Portal
 </p>
 
 <div className="stats">
 
 <div className="statBox">
-📈 Track Goals
+🏆 Goal Master
 </div>
 
 <div className="statBox">
-🤝 Approve Faster
+⭐ Top Performer
 </div>
 
 <div className="statBox">
-🏆 Improve Performance
+🚀 Fast Completion
 </div>
 
 </div>
 
 <br/>
 
-<h2>Features</h2>
-
-<div className="goalGrid">
+<h2>Notifications</h2>
 
 <div className="goalCard">
-🏆 Achievement System
-</div>
 
-<div className="goalCard">
-🔍 Search & Filter
-</div>
+🔔 Sales goal approved
 
-<div className="goalCard">
-🤖 AI Recommendation
-</div>
+<br/><br/>
 
-<div className="goalCard">
-📊 KPI Dashboard
-</div>
+🔔 Q1 review completed
+
+<br/><br/>
+
+🔔 Shared KPI assigned
 
 </div>
 
 <br/>
 
-<h2>Select Role</h2>
+<h2>Shared KPI</h2>
+
+<div className="goalCard">
+
+Department KPI :
+Customer Satisfaction 95%
+
+<br/><br/>
+
+Department KPI :
+Reduce Complaints below 10
+
+</div>
+
+<br/>
 
 <div className="roleButtons">
 
 <button
 className="blue"
-onClick={()=>
+onClick={() =>
 navigate("/employee")
 }
 >
-👨 Employee
+Employee
 </button>
 
 <button
 className="green"
-onClick={()=>
+onClick={() =>
 navigate("/manager")
 }
 >
-👩‍💼 Manager
+Manager
 </button>
 
 <button
 className="red"
-onClick={()=>
+onClick={() =>
 navigate("/admin")
 }
 >
-🛡 Admin
+Admin
 </button>
-
-</div>
-
-<br/>
-
-<div className="goalCard">
-
-<h3>AI Insight</h3>
-
-<p>
-"Customer satisfaction can be improved by increasing KPI target by 5%"
-</p>
 
 </div>
 
